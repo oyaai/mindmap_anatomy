@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy Mind Map — สรุปสอบ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f8f7f4;color:#1a1a1a;padding:1rem}
+h1{font-size:22px;font-weight:600;text-align:center;margin-bottom:4px}
+.sub{font-size:13px;color:#666;text-align:center;margin-bottom:16px}
+.stats{display:flex;gap:8px;margin-bottom:14px;justify-content:center}
+.stat{background:#fff;border:0.5px solid #ddd;border-radius:8px;padding:8px 18px;text-align:center}
+.stat-n{font-size:22px;font-weight:600}
+.stat-l{font-size:11px;color:#888;margin-top:2px}
+.prog-wrap{height:5px;background:#e8e6e0;border-radius:3px;margin-bottom:14px;overflow:hidden}
+.prog-fill{height:100%;border-radius:3px;background:#7F77DD;transition:width .3s}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;justify-content:center}
+.fb{font-size:12px;padding:5px 14px;border-radius:20px;border:0.5px solid #ccc;background:#fff;cursor:pointer;transition:all .15s}
+.fb.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:10px}
+.card{border:0.5px solid #ddd;border-radius:12px;overflow:hidden;background:#fff}
+.card-head{padding:10px 14px;display:flex;align-items:center;gap:10px;justify-content:space-between;cursor:pointer;user-select:none}
+.card-head:hover{background:#fafaf8}
+.hl{display:flex;align-items:center;gap:10px}
+.num{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px}
+.ct{font-size:13.5px;font-weight:500}
+.chev{font-size:11px;color:#999;transition:transform .2s}
+.chev.open{transform:rotate(180deg)}
+.body{display:none;padding:0 14px 14px;border-top:0.5px solid #eee}
+.body.open{display:block}
+.sec{margin-top:12px}
+.sl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:6px}
+.kws{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:4px}
+.kw{font-size:12px;padding:3px 9px;border-radius:20px;border:0.5px solid #ddd;background:#f5f4f0;color:#333;cursor:default}
+.kw.s{font-weight:600;background:#eeedfe;border-color:#c5c2f0;color:#3C3489}
+ul.tl{list-style:none;display:flex;flex-direction:column;gap:4px}
+ul.tl li{font-size:12.5px;padding:5px 8px;border-radius:6px;background:#f8f7f4;line-height:1.45}
+ul.tl li b{font-weight:600}
+.note{margin-top:10px;padding:8px 11px;border-radius:0 6px 6px 0;font-size:12px;line-height:1.5;border-left:3px solid}
+.n-purple{background:#eeedfe;border-color:#7F77DD;color:#3C3489}
+.n-teal{background:#E1F5EE;border-color:#1D9E75;color:#085041}
+.n-coral{background:#FAECE7;border-color:#D85A30;color:#993C1D}
+.n-amber{background:#FAEEDA;border-color:#BA7517;color:#633806}
+.n-blue{background:#E6F1FB;border-color:#378ADD;color:#0C447C}
+.n-green{background:#EAF3DE;border-color:#639922;color:#3B6D11}
+.n-pink{background:#FBEAF0;border-color:#D4537E;color:#72243E}
+</style>
+</head>
+<body>
+<h1>Anatomy Mind Map — สรุปสอบ</h1>
+<div class="sub">คลิกที่แต่ละระบบเพื่อดู Keywords &amp; จุดสำคัญ</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">12</div><div class="stat-l">หัวข้อ</div></div>
+  <div class="stat"><div class="stat-n">8</div><div class="stat-l">ระบบหลัก</div></div>
+  <div class="stat"><div class="stat-n" id="oc">0</div><div class="stat-l">เปิดแล้ว</div></div>
+</div>
+<div class="prog-wrap"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<div class="filter-row">
+  <button class="fb active" onclick="fc('all',this)">ทั้งหมด</button>
+  <button class="fb" onclick="fc('sk',this)">โครงสร้าง</button>
+  <button class="fb" onclick="fc('ne',this)">ประสาท</button>
+  <button class="fb" onclick="fc('or',this)">อวัยวะ</button>
+</div>
+
+<div class="grid" id="mg">
+
+<!-- 1 Integumentary -->
+<div class="card" data-cat="sk" data-i="0">
+<div class="card-head" onclick="tg(0)">
+  <div class="hl"><span class="num" style="background:#eeedfe;color:#3C3489">1</span><span class="ct">Integumentary — ผิวหนัง</span></div>
+  <span class="chev" id="cv0">▼</span>
+</div>
+<div class="body" id="bd0">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Epidermis</span><span class="kw s">Dermis</span><span class="kw s">Hypodermis</span>
+      <span class="kw">Keratin</span><span class="kw">Melanocyte</span><span class="kw">Collagen</span>
+      <span class="kw">Sebaceous gland</span><span class="kw">Sweat gland</span><span class="kw">Arrector pili</span>
+      <span class="kw">Stratum basale</span><span class="kw">Stratum corneum</span><span class="kw">Stratum lucidum</span>
+      <span class="kw">Meissner's corpuscle</span><span class="kw">Pacinian corpuscle</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 จุดสำคัญ</div>
+    <ul class="tl">
+      <li><b>Epidermis</b> = ผิวหนังกำพร้า 5 ชั้น → Come Let's Get Sun Burn</li>
+      <li><b>Dermis</b> = หนังแท้ → มี Collagen, Sebaceous gland, Sweat gland, Arrector pili</li>
+      <li><b>Hypodermis</b> = ชั้นไขมัน, Waterproof, หนาบางแล้วแต่คน</li>
+      <li><b>Melanocyte</b> → สร้าง Melanin → ป้องกัน UV</li>
+      <li><b>Arrector pili</b> = Smooth muscle → ANS (ไม่มีใน Pubic hair)</li>
+      <li><b>Sweat gland</b> → สูญเสีย Na ผ่านเหงื่อ</li>
+      <li><b>Meissner's</b> = Light touch | <b>Pacinian</b> = Vibration + Pressure</li>
+      <li><b>Teeth</b>: น้ำนม 20 ซี่ (4-7 เดือน) → ถาวร 32 ซี่</li>
+      <li><b>Nail</b> = Hard Keratin, เติบโตจาก Epidermis ชั้นล่าง</li>
+    </ul>
+  </div>
+  <div class="note n-purple">⭐ Dermis มีแต่ Collagen | Stratum lucidum พบที่ฝ่ามือ/ฝ่าเท้าเท่านั้น</div>
+</div>
+</div>
+
+<!-- 2 Trauma -->
+<div class="card" data-cat="sk" data-i="1">
+<div class="card-head" onclick="tg(1)">
+  <div class="hl"><span class="num" style="background:#FAECE7;color:#993C1D">2</span><span class="ct">Trauma &amp; Wound Healing</span></div>
+  <span class="chev" id="cv1">▼</span>
+</div>
+<div class="body" id="bd1">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Hemostasis</span><span class="kw s">Inflammation</span>
+      <span class="kw s">Proliferation</span><span class="kw s">Maturation</span>
+      <span class="kw">Tidy / Untidy wound</span><span class="kw">Contracture</span>
+      <span class="kw">Rank-Wakefield</span><span class="kw">Collagenous fiber</span>
+      <span class="kw">Elastic fiber</span><span class="kw">Reticular fiber</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 4 Phases of Wound Healing</div>
+    <ul class="tl">
+      <li><b>Hemostasis</b> (1-3 วัน) → เกล็ดเลือดอุดแผล เพิ่มเลือด</li>
+      <li><b>Inflammation</b> (3-20 วัน) → เก็บกรอบ อักเสบ บวมแดง</li>
+      <li><b>Proliferation</b> (1-6 wks) → สร้างเนื้อเยื่อ/หลอดเลือดใหม่</li>
+      <li><b>Maturation</b> (6wks-2yrs) → Scar แข็งแรงขึ้น ขึ้นอยู่กับ Cell ของแต่ละสถาน</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 แบ่งแผล 6 แบบ</div>
+    <ul class="tl">
+      <li>1. Etiology: Surgical / Confused / Penetrating / Burn</li>
+      <li>2. Integrity: Closed / Open wound</li>
+      <li>3. Rank-Wakefield: Tidy / Untidy → Untidy → Contracture</li>
+      <li>4. Duration: Acute / Chronic (Chronic 2-3wks)</li>
+      <li>5. Depth: Superficial / Partial thickness / Full thickness / Deep</li>
+      <li>6. Contamination: Clean → Contaminated → Infected</li>
+    </ul>
+  </div>
+  <div class="note n-coral">⭐ Fiber 3 ชนิด: Collagenous (แข็งแรง), Elastic (ยืดหยุ่น), Reticular (โครงร่างใน Cell เช่น ม้าม/ต่อมน้ำเหลือง)</div>
+</div>
+</div>
+
+<!-- 3 Skeletal -->
+<div class="card" data-cat="sk" data-i="2">
+<div class="card-head" onclick="tg(2)">
+  <div class="hl"><span class="num" style="background:#E1F5EE;color:#085041">3</span><span class="ct">Skeletal System — 206 ชิ้น</span></div>
+  <span class="chev" id="cv2">▼</span>
+</div>
+<div class="body" id="bd2">
+  <div class="sec"><div class="sl">🔑 Numbers ต้องจำ</div>
+    <div class="kws">
+      <span class="kw s">206 ชิ้นรวม</span><span class="kw s">Axial 80</span><span class="kw s">Appendicular 126</span>
+      <span class="kw">Skull 22</span><span class="kw">Ribs 24</span><span class="kw">Vertebrae 26(adult)/33(child)</span>
+      <span class="kw">Hand bones 27</span><span class="kw">Foot bones 26</span>
+      <span class="kw">Ear ossicles 6</span><span class="kw">Hyoid 1</span><span class="kw">Sternum 1</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 Bone Marrow</div>
+    <ul class="tl">
+      <li><b>Red marrow</b> → สร้าง Blood Cell | <b>Yellow marrow</b> → ไขมัน+สารอาหาร</li>
+      <li>เด็กแรกเกิด = Red 100% → อายุ 25 ปี = Red เหลือเฉพาะ Flat bones</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Axial Skeleton</div>
+    <ul class="tl">
+      <li><b>C1=Atlas</b> (พยักหน้า) | <b>C2=Axis</b> (สั่นหน้า)</li>
+      <li><b>Ribs</b>: True 1-7 | False 8-10 | Floating 11-12</li>
+      <li><b>Herniated disc</b> → Lumbar → กดเส้นประสาท → ปวด/ชา/อ่อนแรง</li>
+      <li><b>Skull fontanelle</b>: ด้านหลัง 2 เดือน | หน้า 2 ปี | กะโหลกสมบูรณ์ 25 ปี</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Appendicular + Disease</div>
+    <ul class="tl">
+      <li>Carpals 8 | Metacarpals 5 | Phalanges 14 = <b>27 ชิ้น</b></li>
+      <li>Fracture healing: Hematoma → Fibrocartilage callus → Bony callus → Remodeling</li>
+      <li><b>Osteoporosis</b> = กระดูกพรุน (Age+Hormones) | <b>Osteoarthritis</b> = ข้อเสื่อม</li>
+      <li><b>Rheumatoid arthritis</b> = Autoimmune disease</li>
+    </ul>
+  </div>
+  <div class="note n-teal">⭐ Cartilage ไม่มี blood vessel &amp; nerve | Calcaneus หักบ่อยสุด 25% | Talus 50%</div>
+</div>
+</div>
+
+<!-- 4 Joints -->
+<div class="card" data-cat="sk" data-i="3">
+<div class="card-head" onclick="tg(3)">
+  <div class="hl"><span class="num" style="background:#E1F5EE;color:#085041">4</span><span class="ct">Joints — ข้อต่อ</span></div>
+  <span class="chev" id="cv3">▼</span>
+</div>
+<div class="body" id="bd3">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Synarthroses</span><span class="kw s">Amphiarthroses</span><span class="kw s">Diarthroses</span>
+      <span class="kw">Fibrous joint</span><span class="kw">Cartilaginous joint</span><span class="kw s">Synovial joint</span>
+      <span class="kw">Sutures</span><span class="kw">Symphyses</span><span class="kw">Synovial fluid</span>
+      <span class="kw">Ball-and-socket</span><span class="kw">Hinge joint</span><span class="kw">Pivot joint</span>
+      <span class="kw">Saddle joint</span><span class="kw">Condyloid</span><span class="kw">Plane joint</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 Functional Classification</div>
+    <ul class="tl">
+      <li><b>Synarthroses</b> = ไม่เคลื่อน เช่น Skull sutures</li>
+      <li><b>Amphiarthroses</b> = เคลื่อนได้นิดหน่อย เช่น Vertebral</li>
+      <li><b>Diarthroses</b> = เคลื่อนได้อิสระ เช่น แขนขา</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Structural Classification</div>
+    <ul class="tl">
+      <li><b>Fibrous</b>: Sutures | Syndesmoses (Radius+Ulna) | Gomphoses (ฟัน+เบ้า) → ไม่เคลื่อน</li>
+      <li><b>Cartilaginous</b>: Synchondroses | Symphyses → เคลื่อนนิดหน่อย</li>
+      <li><b>Synovial★</b>: มี Synovial cavity+fluid → เคลื่อนได้มาก</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 6 ชนิด Synovial Joint</div>
+    <ul class="tl">
+      <li>Pivot (C1-C2) | Hinge (Elbow/Knee) | Saddle (Thumb)</li>
+      <li>Plane (Tarsal) | Condyloid (Wrist) | Ball-and-socket (Hip, Shoulder)</li>
+    </ul>
+  </div>
+  <div class="note n-teal">⭐ Ankle inversion → ATFL ฉีกขาดก่อน | Synovial joint อักเสบ → ไม่ควรใช้งานหนัก</div>
+</div>
+</div>
+
+<!-- 5 Muscular -->
+<div class="card" data-cat="sk" data-i="4">
+<div class="card-head" onclick="tg(4)">
+  <div class="hl"><span class="num" style="background:#FAEEDA;color:#633806">5</span><span class="ct">Muscular System — 600+ มัด</span></div>
+  <span class="chev" id="cv4">▼</span>
+</div>
+<div class="body" id="bd4">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Skeletal muscle</span><span class="kw s">Smooth muscle</span><span class="kw s">Cardiac muscle</span>
+      <span class="kw">Sarcomere</span><span class="kw">Actin</span><span class="kw">Myosin</span>
+      <span class="kw">Slow twitch</span><span class="kw">Fast twitch</span>
+      <span class="kw">Concentric</span><span class="kw">Eccentric</span><span class="kw">Isometric</span>
+      <span class="kw s">Quadriceps (4)</span><span class="kw s">Hamstring (3)</span><span class="kw s">Gastrocnemius (2)</span>
+      <span class="kw">Sartorius</span><span class="kw">Trapezius</span><span class="kw">Gluteus maximus</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 3 ชนิดกล้ามเนื้อ</div>
+    <ul class="tl">
+      <li><b>Skeletal</b> = ลาย → Voluntary, ติดกระดูก, อ่อนแอสุด</li>
+      <li><b>Smooth</b> = เรียบ → Involuntary (ANS+Hormones) → ผนังอวัยวะ เช่น หลอดเลือด</li>
+      <li><b>Cardiac</b> = หัวใจ → Involuntary (ANS) → แข็งแรงสุด</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Muscle fiber types</div>
+    <ul class="tl">
+      <li><b>Slow twitch</b> → มาราธอน, Lactic acid น้อย, ทนนาน</li>
+      <li><b>Fast twitch</b> → วิ่งเร็ว/ยกน้ำหนัก, Lactic acid เยอะ, เหนื่อยเร็ว</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 กล้ามเนื้อขา</div>
+    <ul class="tl">
+      <li><b>Quadriceps (4 ม.)</b>: Rectus femoris, Vastus L/M/I → เหยียดเข่า</li>
+      <li><b>Hamstring (3 ม.)</b>: Biceps femoris, Semimembranosus, Semitendinosus → งอเข่า | เสี่ยงฉีกขาดบ่อย</li>
+      <li><b>Gastrocnemius (2 ม.)</b>: Medial+Lateral head → เดินบนส้นเท้า</li>
+      <li><b>Sartorius</b> = กล้ามที่ยาวที่สุดในร่างกาย ≈ Ribbon</li>
+    </ul>
+  </div>
+  <div class="note n-amber">⭐ Thenar atrophy = Carpal tunnel syndrome | De Quervain's = เอ็นข้อมือ | Dupuytren's = นิ้วล็อก</div>
+</div>
+</div>
+
+<!-- 6 Nervous -->
+<div class="card" data-cat="ne" data-i="5">
+<div class="card-head" onclick="tg(5)">
+  <div class="hl"><span class="num" style="background:#eeedfe;color:#3C3489">6</span><span class="ct">Nervous System — สมอง &amp; ประสาท</span></div>
+  <span class="chev" id="cv5">▼</span>
+</div>
+<div class="body" id="bd5">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">CNS</span><span class="kw s">PNS</span><span class="kw s">ANS</span>
+      <span class="kw">Neuron</span><span class="kw">Dendrite</span><span class="kw">Axon</span><span class="kw">Myelin</span>
+      <span class="kw s">Frontal lobe</span><span class="kw s">Parietal lobe</span><span class="kw s">Occipital lobe</span><span class="kw s">Temporal lobe</span>
+      <span class="kw s">Cerebellum</span><span class="kw s">Brainstem</span>
+      <span class="kw">Thalamus</span><span class="kw s">Hypothalamus</span>
+      <span class="kw">Sympathetic</span><span class="kw">Parasympathetic</span>
+      <span class="kw">Cranial nerves 12 คู่</span><span class="kw">Spinal nerves 31 คู่</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 4 Lobes ของ Cerebrum</div>
+    <ul class="tl">
+      <li><b>Frontal</b> → คิด/วางแผน/พูด/บุคลิก | Motor cortex | Broca's area (ผลิตภาษา)</li>
+      <li><b>Parietal</b> → Sensation ทั่วกาย, เขียน, คณิต | Sensory cortex</li>
+      <li><b>Occipital</b> → มองเห็น, ประมวลผลภาพ</li>
+      <li><b>Temporal</b> → ความจำ, ได้ยิน, รับรส | Wernicke's area (เข้าใจภาษา)</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Brain structures</div>
+    <ul class="tl">
+      <li><b>Cerebellum</b> → ทรงตัว/ประสานงาน | Alcohol → เดินเซ ทำให้ Cerebellum ทำงานผิดปกติ</li>
+      <li><b>Brainstem</b> (Midbrain, Pons, Medulla) → กลืน/หายใจ/ควบคุม BP และหัวใจ</li>
+      <li><b>Thalamus</b> → สถานีกระจายสัญญาณประสาทไปทุก Lobe</li>
+      <li><b>Hypothalamus★</b> → Homeostasis, Hormone, ANS, Sleep-wake | Alcohol ยับยั้ง ADH → ฉี่บ่อย</li>
+      <li><b>Corpus callosum</b> → เชื่อมสมองซีกซ้าย-ขวา</li>
+      <li><b>Ventricle</b> = ช่องว่างในสมอง → มีน้ำสมองไขสันหลัง (CSF)</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Cranial Nerves 12 คู่ (Oh Oh Oh To Touch And Feel Very Good Velvet AH)</div>
+    <ul class="tl">
+      <li>I Olfactory (กลิ่น) | II Optic (ตา) | III Oculomotor (ตา)</li>
+      <li>V Trigeminal (หน้า/เคี้ยว) | VII Facial (กล้ามหน้า → Bell's palsy)</li>
+      <li>X Vagus★ = ยาวที่สุด → หัวใจ/ปอด/ระบบย่อย (Sympathetic)</li>
+      <li>Paresis = อ่อนแรง (mild) | Paralysis = อัมพาต (severe)</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Spinal Nerves 31 คู่</div>
+    <ul class="tl">
+      <li>Cervical C1-8 | Thoracic T1-12 | Lumbar L1-5 | Sacral S1-5 | Coccygeal 1</li>
+      <li><b>Brachial Plexus</b> C5-8 → แขน/มือ (Radial, Median, Ulnar nerve)</li>
+      <li><b>Sciatic nerve</b> = ใหญ่ที่สุดในร่างกาย | Piriformis อาจกดได้</li>
+      <li><b>Reflex</b> = เกิดที่ Spinal cord → ไม่ผ่านสมอง</li>
+      <li><b>Axillary nerve injury</b> → Deltoid อ่อนแรง → ยกแขนไม่ได้</li>
+    </ul>
+  </div>
+  <div class="note n-purple">⭐ Sympathetic = Fight or Flight | Parasympathetic = Rest &amp; Digest | Reflex เกิดที่ Spinal cord</div>
+</div>
+</div>
+
+<!-- 7 Cardiovascular -->
+<div class="card" data-cat="or" data-i="6">
+<div class="card-head" onclick="tg(6)">
+  <div class="hl"><span class="num" style="background:#FCEBEB;color:#791F1F">7</span><span class="ct">Cardiovascular — หัวใจ &amp; เลือด</span></div>
+  <span class="chev" id="cv6">▼</span>
+</div>
+<div class="body" id="bd6">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Right/Left Atrium</span><span class="kw s">Right/Left Ventricle</span>
+      <span class="kw s">Tricuspid valve</span><span class="kw s">Mitral valve</span>
+      <span class="kw s">Aortic valve</span><span class="kw s">Pulmonary valve</span>
+      <span class="kw">Aorta</span><span class="kw">Pulmonary artery/vein</span>
+      <span class="kw">Systolic 120</span><span class="kw">Diastolic 80</span>
+      <span class="kw">Plasma 55%</span><span class="kw">RBC 44%</span>
+      <span class="kw">Carotid artery</span><span class="kw">Femoral artery</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 Heart anatomy</div>
+    <ul class="tl">
+      <li>หัวใจเต้น ~75 ครั้ง/นาที | ปั๊ม=ส่ง | คลาย=รับ</li>
+      <li><b>Right side</b> → รับเลือดดำ → ส่งไป Lung | <b>Left side</b> → รับเลือดแดง → ส่งทั่วร่างกาย</li>
+      <li>Left ventricle กล้ามหนากว่า Right 3 เท่า</li>
+      <li>Valve หัวใจ 4 ตัว → ป้องกันเลือดไหลย้อนกลับ</li>
+      <li><b>Pulmonary artery★</b> = ชื่อ Artery แต่พาเลือดดำ! | <b>Pulmonary vein</b> = พาเลือดแดง</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Blood &amp; Vessels</div>
+    <ul class="tl">
+      <li>Plasma 55% | RBC 44% | WBC+Platelets 1%</li>
+      <li>BP Normal: 120/80 | &gt;180/&gt;120 = วิกฤต</li>
+      <li>Artery = ออกจากหัวใจ | Vein = เข้าหัวใจ</li>
+      <li><b>Carotid artery</b> → เลือดสมอง → กดแล้วเป็นลมได้!</li>
+    </ul>
+  </div>
+  <div class="note n-coral">⭐ Pulmonary artery พาเลือดดำ (สวนทาง!) | Left ventricle กล้ามหนาที่สุด</div>
+</div>
+</div>
+
+<!-- 8 Respiratory -->
+<div class="card" data-cat="or" data-i="7">
+<div class="card-head" onclick="tg(7)">
+  <div class="hl"><span class="num" style="background:#E6F1FB;color:#0C447C">8</span><span class="ct">Respiratory — ระบบหายใจ</span></div>
+  <span class="chev" id="cv7">▼</span>
+</div>
+<div class="body" id="bd7">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Epiglottis</span><span class="kw s">Trachea</span><span class="kw s">Bronchi</span><span class="kw s">Alveoli</span>
+      <span class="kw">Diaphragm</span><span class="kw">Pleural membrane</span>
+      <span class="kw">Larynx</span><span class="kw">Pharynx</span><span class="kw">Uvula</span>
+      <span class="kw">Eustachian tube</span><span class="kw">Paranasal sinus</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 เส้นทางอากาศ</div>
+    <ul class="tl">
+      <li>Nose → Pharynx → Larynx → Trachea → Bronchi → Bronchioles → <b>Alveoli</b></li>
+      <li><b>Right lung</b> = 3 Lobes | <b>Left lung</b> = 2 Lobes (มี Cardiac notch)</li>
+      <li><b>Epiglottis</b> → ปิดกล่องเสียงขณะกลืน → กันอาหารเข้าหลอดลม</li>
+      <li><b>Uvula</b> → ป้องกัน food+น้ำขึ้นจมูก</li>
+      <li><b>Diaphragm</b> = กะบังลม → กล้ามเนื้อหลักการหายใจ</li>
+      <li><b>Alveoli</b> → แลกเปลี่ยนก๊าซ O2/CO2 กับหลอดเลือด</li>
+    </ul>
+  </div>
+  <div class="note n-blue">⭐ Right lung 3 lobes / Left 2 lobes | Eustachian tube = หูกับคอหอย | Alveoli = แลกเปลี่ยนก๊าซ</div>
+</div>
+</div>
+
+<!-- 9 Digestive -->
+<div class="card" data-cat="or" data-i="8">
+<div class="card-head" onclick="tg(8)">
+  <div class="hl"><span class="num" style="background:#EAF3DE;color:#27500A">9</span><span class="ct">Digestive — ระบบย่อยอาหาร</span></div>
+  <span class="chev" id="cv8">▼</span>
+</div>
+<div class="body" id="bd8">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Ingestion</span><span class="kw s">Absorption</span><span class="kw s">Defecation</span>
+      <span class="kw">Amylase</span><span class="kw">Trypsin</span><span class="kw">Lipase</span><span class="kw">Bile</span>
+      <span class="kw">Duodenum</span><span class="kw">Small intestine</span><span class="kw">Large intestine</span>
+      <span class="kw">Liver</span><span class="kw">Gallbladder</span><span class="kw s">Pancreas</span>
+      <span class="kw">LES (Cardia sphincter)</span><span class="kw">Pyloric sphincter</span><span class="kw">Appendix</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 7 กระบวนการ</div>
+    <ul class="tl">
+      <li>1. <b>Ingestion</b> → กิน, ฟัน 32 ซี่ / น้ำนม 8 ซี่, Enzyme Amylase</li>
+      <li>2. <b>Propulsion</b> → Pharynx + Esophagus เลื่อนอาหาร</li>
+      <li>3. <b>Secretion</b> → หลั่งน้ำย่อย</li>
+      <li>4. <b>Mechanical breakdown</b> → Stomach ย่อยสลาย Protein</li>
+      <li>5. <b>Chemical digestion</b> → Liver (Bile) + Pancreas (Enzyme) + Gallbladder</li>
+      <li>6. <b>Absorption</b> → Small intestine ดูดซึม</li>
+      <li>7. <b>Defecation</b> → Large intestine → ดูดน้ำ → ถ่าย</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Enzymes จาก Pancreas</div>
+    <ul class="tl">
+      <li><b>Trypsin+Chymotrypsin</b> → Protein | <b>Amylase</b> → Carbs | <b>Lipase</b> → Fat</li>
+      <li>Insulin (ลดน้ำตาล) | Glucagon (เพิ่มน้ำตาล) → ขาดทั้งคู่ = Diabetes</li>
+      <li>Major salivary glands 3: Parotid (ใหญ่สุด), Submandibular, Sublingual</li>
+    </ul>
+  </div>
+  <div class="note n-green">⭐ Appendix อักเสบ → ปวดขวาล่าง | Bile ไม่มี enzyme แค่ emulsify fat | Rectum → ริดสีดวง = Vein โป่ง</div>
+</div>
+</div>
+
+<!-- 10 Reproductive -->
+<div class="card" data-cat="or" data-i="9">
+<div class="card-head" onclick="tg(9)">
+  <div class="hl"><span class="num" style="background:#FBEAF0;color:#72243E">10</span><span class="ct">Reproductive — ระบบสืบพันธุ์</span></div>
+  <span class="chev" id="cv9">▼</span>
+</div>
+<div class="body" id="bd9">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Testis</span><span class="kw s">Epididymis</span><span class="kw s">Vas deferens</span>
+      <span class="kw">Testosterone</span><span class="kw">LH</span><span class="kw">FSH</span>
+      <span class="kw s">Ovary</span><span class="kw s">Fallopian tube</span><span class="kw s">Uterus</span>
+      <span class="kw s">Cervix</span><span class="kw">Estrogen</span><span class="kw">Progesterone</span>
+      <span class="kw">BPH</span><span class="kw">Seminal vesicle</span><span class="kw">Prostate gland</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 Male</div>
+    <ul class="tl">
+      <li>โครงสร้าง 4 กลุ่ม: Testis → Accessory glands → Accessory duct → Penis</li>
+      <li>Sperm full cycle ~64 วัน | 3 Glands: Seminal vesicle, Prostate, Bulbourethral</li>
+      <li><b>BPH</b> = ต่อมลูกหมากโต → บีบท่อปัสสาวะ → ปัสสาวะลำบาก</li>
+    </ul>
+  </div>
+  <div class="sec"><div class="sl">📌 Female</div>
+    <ul class="tl">
+      <li>Ovary → Fallopian tube (Fimbriae ดักจับ Ovum) → Uterus → Cervix → Vagina</li>
+      <li><b>Cervix★</b> = จุดที่เป็น Cancer บ่อยที่สุด (มะเร็งปากมดลูก)</li>
+    </ul>
+  </div>
+  <div class="note n-pink">⭐ Cervical cancer = จุดเสี่ยง! | BPH = ต่อมลูกหมากโต | Sperm cycle 64 วัน</div>
+</div>
+</div>
+
+<!-- 11 Urinary -->
+<div class="card" data-cat="or" data-i="10">
+<div class="card-head" onclick="tg(10)">
+  <div class="hl"><span class="num" style="background:#E6F1FB;color:#0C447C">11</span><span class="ct">Urinary — ระบบปัสสาวะ</span></div>
+  <span class="chev" id="cv10">▼</span>
+</div>
+<div class="body" id="bd10">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Nephron</span><span class="kw s">Glomerulus</span><span class="kw s">Bowman's capsule</span>
+      <span class="kw">Loop of Henle</span><span class="kw">Renal pelvis</span><span class="kw">Ureter</span>
+      <span class="kw">Bladder</span><span class="kw">Urethra</span><span class="kw">Trigone</span>
+      <span class="kw">UTI</span><span class="kw">Overactive bladder</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 จุดสำคัญ</div>
+    <ul class="tl">
+      <li>Kidney → Ureter → Bladder → Urethra</li>
+      <li><b>Nephron</b> = หน่วยกรองของไต | Glomerulus (กรองเลือด) → Bowman's capsule → Loop of Henle → Collecting tubule</li>
+      <li>UTI (Honeymoon cystitis) = อักเสบในระบบปัสสาวะ</li>
+      <li>ผู้ชาย Orgasm → Sperm ย้อนกลับ Bladder ได้</li>
+      <li>ไสตันเลือด → ปัสสาวะเต็ม Bladder แต่ไม่ออก</li>
+    </ul>
+  </div>
+  <div class="note n-blue">⭐ Nephron = หน่วยกรองของไต | Left kidney สูงกว่า Right เล็กน้อย</div>
+</div>
+</div>
+
+<!-- 12 Endocrine -->
+<div class="card" data-cat="or" data-i="11">
+<div class="card-head" onclick="tg(11)">
+  <div class="hl"><span class="num" style="background:#eeedfe;color:#3C3489">12</span><span class="ct">Endocrine — ต่อมไร้ท่อ</span></div>
+  <span class="chev" id="cv11">▼</span>
+</div>
+<div class="body" id="bd11">
+  <div class="sec"><div class="sl">🔑 Keywords</div>
+    <div class="kws">
+      <span class="kw s">Hypothalamus★</span><span class="kw s">Pituitary gland</span>
+      <span class="kw s">Thyroid gland</span><span class="kw">Parathyroid</span>
+      <span class="kw">Adrenal gland</span><span class="kw">Pineal gland</span><span class="kw">Thymus</span>
+      <span class="kw">Growth hormone (GH)</span><span class="kw">Prolactin</span><span class="kw">Oxytocin</span>
+      <span class="kw">ADH/Vasopressin</span><span class="kw">Melatonin</span><span class="kw">Insulin/Glucagon</span>
+    </div>
+  </div>
+  <div class="sec"><div class="sl">📌 ต่อมสำคัญ</div>
+    <ul class="tl">
+      <li><b>Hypothalamus★</b> = Master of Masters → ควบคุม Pituitary, ANS, Homeostasis, Sleep-wake</li>
+      <li><b>Pituitary</b> → GH (Deep sleep → กระดูก+กล้ามเนื้อ) | Prolactin (น้ำนม) | Gonadotropic (อวัยวะเพศ)</li>
+      <li><b>Pineal gland</b> → Melatonin → Wake-sleep cycle (Happy/Unhappy hormones)</li>
+      <li><b>Thyroid</b> → Metabolism | <b>Parathyroid</b> → ระดับ Calcium ในเลือด</li>
+      <li><b>Adrenal gland</b> → Fight-or-flight (Sympathetic) → สร้าง Steroid</li>
+      <li><b>Thymus</b> → Immunity | Alcohol → ขัดขวาง ADH → ฉี่บ่อย</li>
+    </ul>
+  </div>
+  <div class="note n-purple">⭐ Hypothalamus → Pituitary (ควบคุม 90%) → GH = Direct Target ที่ Pituitary สร้างได้เอง</div>
+</div>
+</div>
+
+</div><!-- end grid -->
+
+<script>
+var op=new Set();
+function tg(i){
+  var b=document.getElementById('bd'+i);
+  var c=document.getElementById('cv'+i);
+  if(b.classList.contains('open')){b.classList.remove('open');c.classList.remove('open');op.delete(i);}
+  else{b.classList.add('open');c.classList.add('open');op.add(i);}
+  document.getElementById('oc').textContent=op.size;
+  document.getElementById('pf').style.width=Math.round(op.size/12*100)+'%';
+}
+function fc(cat,btn){
+  document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(function(c){
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
